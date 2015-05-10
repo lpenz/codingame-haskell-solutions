@@ -6,6 +6,7 @@ import System.Exit (exitFailure, exitSuccess)
 arguments :: [String]
 arguments =
     [ "puzzles/0-easy/onboarding/solution.hs"
+    , "puzzles/0-easy/kirks-quest-the-descent/solution.hs"
     ]
 
 main :: IO ()

@@ -17,6 +17,11 @@ executable onboarding
   build-depends:     base >= 4.6
   default-language:  Haskell2010
 
+executable kirks-quest-the-descent
+  main-is:           puzzles/0-easy/kirks-quest-the-descent/solution.hs
+  build-depends:     base >= 4.6
+  default-language:  Haskell2010
+
 test-suite hlint
   build-depends:     base >= 4.6
   build-depends:     hlint >= 1.8
