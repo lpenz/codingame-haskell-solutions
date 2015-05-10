@@ -12,7 +12,7 @@ loop :: IO ()
 loop = do
     e <- replicateM 2 $ do
         name <- getLine
-        dist <- getLine
+        dist <- liftM read getLine :: IO Int
         return (name, dist)
     putStrLn $ fst $ minimumBy (comparing snd) e
     loop

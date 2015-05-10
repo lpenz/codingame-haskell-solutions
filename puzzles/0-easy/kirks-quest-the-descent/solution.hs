@@ -10,11 +10,8 @@ main = do
 
 loop :: IO ()
 loop = do
-    input_line <- getLine
-    let [sx, sy] = map read $ words input_line
-    mhs <- replicateM 8 $ do
-        mh <- getLine
-        return (read mh :: Int)
+    [sx, sy] <- liftM (map read . words) getLine :: IO [Int]
+    mhs <- replicateM 8 $ liftM read getLine :: IO [Int]
     let xmax = snd $ maximumBy (comparing fst) $ zip mhs [0..]
     putStrLn $ if sx == xmax then "FIRE" else "HOLD"
     loop
