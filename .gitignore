@@ -1,0 +1,5 @@
+/.sconsign.dblite
+*.hi
+*.o
+/dist
+solution
