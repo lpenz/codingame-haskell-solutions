@@ -1,2 +1,2 @@
 # codingame
-lpenz solutions for www.codingame.com
+lpenz haskell solutions for www.codingame.com
