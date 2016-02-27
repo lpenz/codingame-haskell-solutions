@@ -37,6 +37,11 @@ executable temperatures
   build-depends:     base >= 4.6
   default-language:  Haskell2010
 
+executable mars-lander
+  main-is:           puzzles/0-easy/mars-lander/solution.hs
+  build-depends:     base >= 4.6
+  default-language:  Haskell2010
+
 test-suite hlint
   build-depends:     base >= 4.6
   build-depends:     hlint >= 1.8

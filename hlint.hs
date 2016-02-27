@@ -10,6 +10,7 @@ arguments =
     , "puzzles/0-easy/ragnarok-power-of-thor/solution.hs"
     , "puzzles/0-easy/skynet-the-chasm/solution.hs"
     , "puzzles/0-easy/temperatures/solution.hs"
+    , "puzzles/0-easy/mars-lander/solution.hs"
     ]
 
 main :: IO ()
