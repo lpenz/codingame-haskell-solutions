@@ -42,6 +42,11 @@ executable mars-lander
   build-depends:     base >= 4.6
   default-language:  Haskell2010
 
+executable chuck-norris
+  main-is:           puzzles/0-easy/chuck-norris/solution.hs
+  build-depends:     base >= 4.6
+  default-language:  Haskell2010
+
 test-suite hlint
   build-depends:     haskell-src-exts < 1.17
   build-depends:     base >= 4.6
