@@ -52,6 +52,13 @@ executable horse-racing-duals
   build-depends:     base >= 4.6
   default-language:  Haskell2010
 
+executable mime-type
+  main-is:           puzzles/0-easy/mime-type/solution.hs
+  build-depends:     base >= 4.6
+  build-depends:     containers
+  build-depends:     filepath
+  default-language:  Haskell2010
+
 test-suite hlint
   build-depends:     haskell-src-exts < 1.17
   build-depends:     base >= 4.6
