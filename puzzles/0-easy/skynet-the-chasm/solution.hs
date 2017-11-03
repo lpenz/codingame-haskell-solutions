@@ -10,11 +10,11 @@ data St   = St { r::Int, g::Int, l::Int, s::Int, x::Int, px::Int, m:: Move } der
 main :: IO ()
 main = do
     hSetBuffering stdout NoBuffering
-    r0 <- liftM read getLine :: IO Int -- the length of the road before the gap.
-    g0 <- liftM read getLine :: IO Int -- the length of the gap.
-    l0 <- liftM read getLine :: IO Int -- the length of the landing platform.
-    s0 <- liftM read getLine :: IO Int -- the motorbike's initial speed.
-    x0 <- liftM read getLine :: IO Int -- the position on the road of the motorbike.
+    r0 <- fmap read getLine :: IO Int -- the length of the road before the gap.
+    g0 <- fmap read getLine :: IO Int -- the length of the gap.
+    l0 <- fmap read getLine :: IO Int -- the length of the landing platform.
+    s0 <- fmap read getLine :: IO Int -- the motorbike's initial speed.
+    x0 <- fmap read getLine :: IO Int -- the position on the road of the motorbike.
     let st0 = St { r = r0, g = g0, l = l0, s = s0, x = x0, px = x0, m = WAIT }
     hPrint stderr st0
     let allans = allMoves st0 :: [[Move]] -- all possible short-sighted solutions
@@ -75,7 +75,7 @@ loop ms = do
     putStrLn $ case head ms of
         (JUMP _) -> "JUMP"
         _ -> show $ head ms
-    s <- liftM read getLine :: IO Int -- the motorbike's speed - discard, we already calculated.
-    x <- liftM read getLine :: IO Int -- the position on the road of the motorbike - discard, we already calculated.
+    s <- fmap read getLine :: IO Int -- the motorbike's speed - discard, we already calculated.
+    x <- fmap read getLine :: IO Int -- the position on the road of the motorbike - discard, we already calculated.
     loop $ tail ms
 

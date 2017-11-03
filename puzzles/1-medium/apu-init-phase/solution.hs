@@ -52,9 +52,9 @@ putneigh nodes f g node = ans
 main :: IO ()
 main = do
     hSetBuffering stdout NoBuffering
-    width <- liftM read getLine :: IO Int
-    height <- liftM read getLine :: IO Int
-    lines <- replicateM height $ liftM (L.map (== '0')) getLine :: IO [[Bool]]
+    width <- fmap read getLine :: IO Int
+    height <- fmap read getLine :: IO Int
+    lines <- replicateM height $ fmap (L.map (== '0')) getLine :: IO [[Bool]]
     let nodes = inputproc width height lines
     forM_ nodes $ \ node -> do
         putStr $ show node ++ " "

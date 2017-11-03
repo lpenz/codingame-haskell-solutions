@@ -5,8 +5,8 @@ import Control.Monad
 main :: IO ()
 main = do
     hSetBuffering stdout NoBuffering
-    l <- liftM read getLine :: IO Int
-    h <- liftM read getLine :: IO Int
+    l <- fmap read getLine :: IO Int
+    h <- fmap read getLine :: IO Int
     t <- getLine :: IO String
     code <- replicateM h getLine :: IO [String]
     mapM_ (outputLine l t) code

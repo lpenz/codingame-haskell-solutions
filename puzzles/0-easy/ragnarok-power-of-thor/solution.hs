@@ -4,12 +4,12 @@ import Control.Monad
 main :: IO ()
 main = do
     hSetBuffering stdout NoBuffering
-    [lx, ly, tx, ty] <- liftM (map read . words) getLine
+    [lx, ly, tx, ty] <- fmap (map read . words) getLine
     loop lx ly tx ty
 
 loop :: Int -> Int -> Int -> Int -> IO ()
 loop lx ly tx ty = do
-    energy <- liftM read getLine :: IO Int
+    energy <- fmap read getLine :: IO Int
     let dx = fdx lx tx
     let dy = fdy ly ty
     putStrLn $ sdy dy ++ sdx dx
