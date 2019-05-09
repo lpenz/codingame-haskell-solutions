@@ -30,7 +30,7 @@ allMoves st | null nmsts = [[]]
         nmsts :: [(Move, St)]
         nmsts = map (\nm -> (nm, nextState st nm)) $ nextMoves st
         f :: (Move, St) -> [[Move]]
-        f (nm, nsts) = map (\nms -> nm:nms) (allMoves nsts)
+        f (nm, nsts) = map (nm :) (allMoves nsts)
 
 finalState :: St -> [Move] -> St
 -- finalState = foldl (\ st m -> trace (show $ nextState st m) $ nextState st m)
